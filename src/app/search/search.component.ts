@@ -10,12 +10,14 @@ export class SearchComponent implements OnInit {
   profile: any = [];
   repos: any = [];
   username: any;
+  display: any =false;
 
   constructor(private profileService: RepositoryService) {}
 
   ngOnInit(): void {}
 
   findUser() {
+    this.display =
     this.profileService.updateProfile(this.username);
     this.profileService.getProfileInfo().subscribe((profile) => {
       console.log(profile);
