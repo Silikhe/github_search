@@ -7,6 +7,8 @@
 ## Description
 
 This is a website where a user can search for a github username or repo.
+![screenshot-localhost_4200-2021 07 28-08_04_55](https://user-images.githubusercontent.com/65366942/127266763-cc2a54fc-4fe0-4fce-87e0-04b7dd31ed12.png)
+
 
 ### How it wors 🔧!
 #### Enter your username or repo name
