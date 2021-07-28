@@ -9,14 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { RepositoryComponent } from './repository/repository.component';
 import { SearchComponent } from './search/search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfilesComponent } from './components/profiles/profiles.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RepositoryComponent,
-    SearchComponent
+    SearchComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule,
