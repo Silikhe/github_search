@@ -1,29 +1,113 @@
-<section id="hero">
+<section id="hero" *ngIf="repos">
   <div class="container">
-    <h1 class="">Search your github name here</h1>
+    <h1 class="heading text-center mt-5">Search your github name here</h1>
 
     <div class="searchwrapper">
-      
+
       <div class="searchbox">
-        <div class="row">
-          <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="Enter github username or repos..." [(ngModel)]="username" name="username" (keyup)="findUser()">
+        <!-- <div class="row">
+          <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Enter github username or repos..."
+              [(ngModel)]="username" name="username" (keyup)="findUser()">
           </div>
-          <div class="col-md-3">
-            <select class="form-control category">
-              <option>Username</option>
-              <option>Repo</option>
-            </select>
+          <div class="col-md-3  text-center p-3">
+            <div class="butt">
+              Search
+            </div>
+            
           </div>
-          <div class="col-md-1 butt"><input type="button" class="btn btn-danger" class="form-control" value="Search">
+        </div> -->
+        <div class="wrapper">
+          <div class="searchBar">
+            <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Enter github username" value=""[(ngModel)]="username" (keyup)="findUser()"/>
+            <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </section>
+
 <div class="container">
   <div class="row">
-    .col
+    <div class="col-md-4">
+      <div class="mt-5 mx-auto">
+        <!-- Component -->
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <a href="#" class="avatar avatar-xl rounded-circle">
+                <img alt="..." src="{{profile.avatar_url}}">
+              </a>
+            </div>
+            <div class="text-center my-6">
+              <!-- Title -->
+              <a href="#" class="d-block h5 mb-0">{{profile.login}}</a>
+              <!-- Subtitle -->
+              <span class="d-block text-sm text-mute">{{profile.bio}}</span>
+              <span class="d-block text-sm text-muted">{{profile.email}}</span>
+            </div>
+            <!-- Stats -->
+            <div class="d-flex">
+              <div class="col-4 text-center">
+                <a href="#" class="h4 font-bolder mb-0">{{profile.public_repos}}</a>
+                <span class="d-block text-sm">Repos</span>
+              </div>
+              <div class="col-4 text-center">
+                <a href="#" class="h4 font-bolder mb-0">{{profile.followers}}</a>
+                <span class="d-block text-sm">Followers</span>
+              </div>
+              <div class="col-4 text-center">
+                <a href="#" class="h4 font-bolder mb-0">{{profile.following}}</a>
+                <span class="d-block text-sm">Following</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="{{profile.html_url}}" class="text-warning" target="_blank">Browse all projects -></a>
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="container">
+        <h2 class="text-center mt-3">Repositories from Username</h2>
+        <div class="row">
+          <div class="col-md-4" *ngFor="let repo of repos">
+            <a href="{{repo.html_url}}" class="github-card" data-github="Nexmo/nexmo-ruby">
+              <h3>{{repo.name}}</h3>
+              <p>{{repo.description}}</p>
+              <span class="d-block text-sm text-muted mb-2">{{repo.created_at}}</span>
+
+              <span class="github-card__meta">
+                <span class="github-card__language-icon" style="color: #7A0410;">●</span> {{repo.language}}
+              </span>
+              <span class="github-card__meta">
+                <i class="fa fa-star pl-1" aria-hidden="true">{{repo.stargazers_count}}</i>
+                <span data-stars>
+                  <!-- <i class="fa fa-spinner" aria-hidden="false"></i> -->
+                </span>
+              </span>
+              <span class="github-card__meta">
+                <i class="fas fa-code-branch" aria-hidden="true">{{repo.forks_count}}</i>
+                <span data-forks>
+                  <!-- <i class="fa fa-spinner" aria-hidden="true"></i> -->
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center" *ngIf="repos">
+        <a href="{{repos.html_url}}" class="text-warning" target="_blank">Browse all projects -></a>
+      </div>
+    </div>
   </div>
 </div>

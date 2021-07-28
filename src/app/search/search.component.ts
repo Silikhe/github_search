@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
   profile: any = [];
   repos: any = [];
-  username: string = "";
+  username: any;
 
   constructor(private profileService: RepositoryService) {}
 

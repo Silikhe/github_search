@@ -1,5 +1,7 @@
-<div class="container" >
-  <h2 class="text-center mt-3">Repositories from Username</h2>
+<div class="container" *ngIf="repos">
+  <h2 class="text-center mt-3">
+    <!-- {{repos.length}}  -->
+    Repositories</h2>
   <div class="row" >
     <div class="col-md-4" *ngFor="let repo of repos">
       <a href="{{repo.html_url}}" class="github-card" data-github="Nexmo/nexmo-ruby">
