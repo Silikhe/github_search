@@ -8,3 +8,11 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+.heading{
+  padding: 2%;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
