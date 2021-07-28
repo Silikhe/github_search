@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   findUser() {
-    this.display =
+    this.display = true
     this.profileService.updateProfile(this.username);
     this.profileService.getProfileInfo().subscribe((profile) => {
       console.log(profile);
