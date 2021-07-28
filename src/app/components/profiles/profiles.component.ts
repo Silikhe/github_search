@@ -7,14 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profiles.component.css']
 })
 export class ProfilesComponent implements OnInit {
+  public info:any = [];
+  public repos:any = [];
+  public profiles: any = []
 
-  public profile: any = []
-
-  constructor(private service: RepositoryService) { }
+  constructor(private service: RepositoryService) { 
+    this.service.getUserInfo().subscribe(info => {
+      console.log(info);
+      this.info = info;
+    });
+    this.service.getUserRepos().subscribe(repos => {
+      console.log(repos);
+      this.repos=repos;
+    });
+  }
 
   ngOnInit(): void {
     this.service.getProfiles().subscribe((data)=> {
-      this.profile = data;
+      this.profiles = data;
       console.log(data)
     })
   }
