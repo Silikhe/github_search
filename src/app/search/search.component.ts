@@ -7,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-
+  profile: any = [];
+  repos: any = [];
+  username: string = "";
 
   constructor(private profileService: RepositoryService) {}
 
   ngOnInit(): void {}
 
-  
+  findUser() {
+    this.profileService.updateProfile(this.username);
+    this.profileService.getProfileInfo().subscribe((profile) => {
+      console.log(profile);
+      this.profile = profile;
+    });
+
+    this.profileService.getRepos().subscribe((repos) => {
+      console.log(repos);
+      this.repos = repos;
+    });
+  }
 }
