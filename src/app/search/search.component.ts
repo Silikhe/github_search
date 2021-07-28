@@ -23,8 +23,8 @@ export class SearchComponent implements OnInit {
     });
 
     this.profileService.getRepos().subscribe((repos) => {
-      console.log(repos);
-      this.repos = repos;
+      console.log("repos here" + repos);
+      this.repos.json = repos;
     });
   }
 }

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class RepositoryService {
+  private user: any;
   private username: string;
   private _Url = 'https://api.github.com/users';
 
@@ -44,7 +45,7 @@ export class RepositoryService {
   }
 
   getRepos(){
-    return this.http.get("https://api.github.com/users/" + this.username);
+    return this.http.get("https://api.github.com/users/" + this.user);
   }
 
   updateProfile(username:string){
