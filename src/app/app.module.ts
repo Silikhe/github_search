@@ -10,7 +10,8 @@ import { RepositoryComponent } from './repository/repository.component';
 import { SearchComponent } from './search/search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProfilesComponent } from './components/profiles/profiles.component'
+import { ProfilesComponent } from './components/profiles/profiles.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProfilesComponent } from './components/profiles/profiles.component'
     AppComponent,
     RepositoryComponent,
     SearchComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
