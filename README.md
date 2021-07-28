@@ -8,7 +8,7 @@
 
 This is a website where a user can search for a github username or repo.
 
-###How it wors 🔧!
+### How it wors 🔧!
 #### Enter your username or repo name
 1. On the search bar
 
