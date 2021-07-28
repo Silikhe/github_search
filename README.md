@@ -1,27 +1,40 @@
-# Github
+# Gitub Search App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+#### A site to search for github usernames and repos, july, 2021
 
-## Development server
+#### By **Silas Silikhe**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This is a website where a user can search for a github username or repo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### How it wors 🔧!
+#### Enter your username or repo name
+1. On the search bar
 
-## Build
+2. Username will be desplayed at the bottom
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Setup/Installation Requirements
 
-## Running unit tests
+- copy the url on arrow down
+- Clone on your computer
+- npm install 
+- ng serve
+- open the app to the default port 4200 (http://localhost:4200)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Known Bugs
 
-## Running end-to-end tests
+- None at the moment
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Technologies Used
 
-## Further help
+Angular, Angular material, TravisCi and HttpClient Api
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Support and contact details
+
+silikhesilas@gmail.com on slack Silikhe
+
+### License
+
+Read our [licences](./License)
+Copyright (c) 2021 **Silas Silikhe**
