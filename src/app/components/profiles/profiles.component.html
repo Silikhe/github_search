@@ -1,8 +1,10 @@
     
-      <div class="mt-5 mx-auto" *ngIf="info">
+     <div class="row">
+      <div class="col-md-4 mt-5 mx-auto" *ngFor="let info of info">
         <!-- Component -->
         <div class="card shadow" >
           <div class="card-body">
+            {{info.length}}
             <div class="d-flex justify-content-center">
               <a href="#" class="avatar avatar-xl rounded-circle">
                 <img alt="..." src="{{info.avatar_url}}">
@@ -34,6 +36,7 @@
           </div>
         </div>
       </div>
+     </div>
     <div class="mt-8 text-center">
       <a href="{{info.html_url}}" class="text-warning" target="_blank">View profile -></a>
     </div>

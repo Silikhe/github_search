@@ -44,11 +44,17 @@ export class RepositoryService {
     return this.http.get("https://api.github.com/users/" + this.username);
   }
 
-  getRepos(){
-    return this.http.get("https://api.github.com/users/" + this.user);
+  getRepos(user: any){
+    let userrepo = this.http.get('https://api.github.com/users/' + user + '/repos');
+    console.log(userrepo)
+    return userrepo
   }
 
   updateProfile(username:string){
+    this.username = username;
+  }
+
+  updateRepo(username:string){
     this.username = username;
   }
 }
