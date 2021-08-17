@@ -9,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
   profile: any = [];
   repos: any = [];
+  info: any=[];
   username: any;
   display: any =true;
 
-  constructor(private profileService: RepositoryService) {}
+  constructor(private profileService: RepositoryService) {
+    this.profileService.getUserInfo().subscribe(info => {
+      console.log("repos here" + info);
+      this.info = info;
+    });
+
+    this.profileService.getUserRepos().subscribe(repos => {
+      console.log(repos);
+      this.repos=repos;
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -25,9 +36,14 @@ export class SearchComponent implements OnInit {
       this.profile = profile;
     });
 
-    this.profileService.getRepos(this.username).subscribe((repos) => {
-      console.log("repos here" + repos);
-      this.repos = repos;
-    });
+    // this.profileService.getRepos(this.username).subscribe((repos) => {
+    //   console.log("repos here" + repos);
+    //   this.repos = repos;
+    // });
+
+    // this.profileService.getProfileInfo().subscribe((info) => {
+    //   console.log("repos here" + info);
+    //   this.info = info;
+    // });
   }
 }

@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfilesComponent } from './components/profiles/profiles.component';
 
 const routes: Routes = [
-  { path: '', component: SearchComponent },
   { path: 'repos', component: RepositoryComponent },
   { path: 'profile', component: ProfilesComponent },
 ];

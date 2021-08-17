@@ -17,7 +17,7 @@ export class ProfilesComponent implements OnInit {
       this.info = info;
     });
     this.service.getUserRepos().subscribe(repos => {
-      console.log(repos);
+      console.log("repo" + repos);
       this.repos=repos;
     });
   }

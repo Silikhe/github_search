@@ -53,8 +53,4 @@ export class RepositoryService {
   updateProfile(username:string){
     this.username = username;
   }
-
-  updateRepo(username:string){
-    this.username = username;
-  }
 }
