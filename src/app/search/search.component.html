@@ -1,23 +1,5 @@
-<section id="hero" >
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">GitSearch</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/repos">Repositories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">profile</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<section id="hero">
+  <app-profile></app-profile>
   <div class="container">
     <p class="heading text-center mt-5">Search your github name here</p>
     <div class="searchwrapper">
@@ -116,7 +98,7 @@
   <div class="row">
     <div class="col-md-4 mt-5 mx-auto" *ngIf="info">
       <!-- Component -->
-      <div class="card shadow" >
+      <div class="card shadow">
         <div class="card-body">
           {{info.length}}
           <div class="d-flex justify-content-center">
@@ -124,7 +106,7 @@
               <img alt="..." src="{{info.avatar_url}}">
             </a>
           </div>
-          <div class="text-center my-6" >
+          <div class="text-center my-6">
             <!-- Title -->
             <a href="#" class="d-block h5 mb-0">{{info.login}}</a>
             <!-- Subtitle -->
@@ -145,19 +127,19 @@
               <a href="#" class="h4 font-bolder mb-0">{{info.following}}</a>
               <span class="d-block text-sm">Following</span>
             </div>
-            
+
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-8">
       <div class="row">
-        <div class="col-md-4"  *ngFor="let repo of repos">
+        <div class="col-md-4" *ngFor="let repo of repos">
           <a href="{{repo.html_url}}" class="github-card" data-github="Nexmo/nexmo-ruby">
             <h3>{{repo.name}}</h3>
             <p>{{repo.description}}</p>
             <span class="d-block text-sm text-muted mb-2">{{repo.created_at | date}}</span>
-    
+
             <span class="github-card__meta">
               <span class="github-card__language-icon" style="color: #7A0410;">●</span> {{repo.language}}
             </span>
@@ -176,9 +158,8 @@
           </a>
         </div>
       </div>
-     
+      <!-- <app-repo></app-repo> -->
     </div>
   </div>
 </div>
 <app-footer></app-footer>
-<app-repo></app-repo>

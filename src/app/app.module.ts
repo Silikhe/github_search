@@ -12,7 +12,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfilesComponent } from './components/profiles/profiles.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { DatePipe } from './pipes/date.pipe'
+import { DatePipe } from './pipes/date.pipe';
+import { ProfileComponent } from './components/profile/profile.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DatePipe } from './pipes/date.pipe'
     SearchComponent,
     ProfilesComponent,
     FooterComponent,
-    DatePipe
+    DatePipe,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

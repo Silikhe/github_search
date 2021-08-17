@@ -36,14 +36,14 @@ export class SearchComponent implements OnInit {
       this.profile = profile;
     });
 
-    // this.profileService.getRepos(this.username).subscribe((repos) => {
-    //   console.log("repos here" + repos);
-    //   this.repos = repos;
-    // });
+    this.profileService.getRepos(this.username).subscribe((repos) => {
+      console.log("repos here" + repos);
+      this.repos = repos;
+    });
 
-    // this.profileService.getProfileInfo().subscribe((info) => {
-    //   console.log("repos here" + info);
-    //   this.info = info;
-    // });
+    this.profileService.getProfileInfo().subscribe((info) => {
+      console.log("repos here" + info);
+      this.info = info;
+    });
   }
 }
